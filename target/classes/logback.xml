@@ -1,0 +1,13 @@
+<configuration>
+
+    <property name="LOGS" value="./logs" />
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern>%d{YYYY-MM-dd'T'HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{36}) - [%X{Correlation-ID}] - %replace(%msg){'[\n\r]',''} %replace(%ex){'[\r\n]+', '|'}%nopex%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>

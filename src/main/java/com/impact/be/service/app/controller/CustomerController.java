@@ -1,5 +1,7 @@
 package com.impact.be.service.app.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +23,10 @@ public class CustomerController {
     @PostMapping("/add/customer")
     public Customer saveCustomer(@RequestBody Customer customer) {
         return customerRepository.saveCustomer(customer);
+    }
+    @GetMapping("/get/allCustomers")
+    public List<Customer> getAll() {
+        return customerRepository.getAll();
     }
 
     @GetMapping("/get/customer/{id}")
